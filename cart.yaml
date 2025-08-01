@@ -6,7 +6,7 @@
     ansible.builtin.command: dnf module disable nodejs -y
 
   - name: Enable nodejs:20
-    ansible.buildin.command: dnf module enable nodejs -y
+    ansible.builtin.command: dnf module enable nodejs -y
   
   - name: Install nodejs
     ansible.builtin.dnf:
@@ -46,7 +46,7 @@
       dest: /etc/systemd/system/cart.service
 
   - name: Reload daemon Reload
-    ansible.buildin.systemd_service:
+    ansible.builtin.systemd_service:
       daemon_reload: true
 
   - name: Enable and start cart service
