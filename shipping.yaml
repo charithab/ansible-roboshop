@@ -10,11 +10,13 @@
     - maven
     - mysql
 
-  - name: Install PyMySql
+  - name: Install PyMySql and cryptography
     ansible.builtin.pip:
       name: "{{ item }}"
       state: present
+      executable: pip3.9
     loop:
+    - cryptography
     - PyMySQL
   
   - name: Add Roboshop system user
