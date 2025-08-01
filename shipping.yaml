@@ -6,9 +6,9 @@
     ansible.builtin.dnf:
       name: "{{ item }}"
       state: present
-      loop:
-      - maven
-      - mysql
+    loop:
+    - maven
+    - mysql
   
   - name: Add Roboshop system user
     ansible.builtin.user:
@@ -65,10 +65,10 @@
       name: all
       state: import
       target: "{{ item }}"
-      loop:
-      - /app/db/schema.sql
-      - /app/db/app-user.sql 
-      - /app/db/master-data.sql
+    loop:
+    - /app/db/schema.sql
+    - /app/db/app-user.sql 
+    - /app/db/master-data.sql
     
   - name: Restart shipping
     ansible.builtin.service:
